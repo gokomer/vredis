@@ -12,7 +12,10 @@ pub struct Redis {
 mut:
 	socket net.TcpConn
 }
-
+// EX seconds -- Set the specified expire time, in seconds.
+// PX milliseconds -- Set the specified expire time, in milliseconds.
+// NX -- Set expiry only when the key has no expiry
+// XX -- Set expiry only when the key has an existing expiry
 pub struct SetOpts {
 	ex       int = -4
 	px       int = -4
